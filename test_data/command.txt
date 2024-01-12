@@ -1,0 +1,31 @@
+python train.py --dataset=shakespeare --n_layer=4 --n_head=4 --n_embd=64 --device=cpu --compile=False --eval_iters=1 --block_size=64 --batch_size=8
+
+python train.py config/train_shakespeare_char.py --device=cpu --compile=False --eval_iters=20 --log_interval=1 --block_size=64 --batch_size=12 --n_layer=4 --n_head=4 --n_embd=128 --max_iters=2000 --lr_decay_iters=2000 --dropout=0.0
+
+python train.py --dataset=xiyouji --n_layer=4 --n_head=4 --n_embd=64 --device=cpu --compile=True --eval_iters=1 --block_size=64 --batch_size=8 --max_iters=2000
+
+python sample.py --out_dir=out-shakespeare-char
+
+python sample.py --out_dir=out-shakespeare-char --start="To be or not to be"
+
+python sample.py --out_dir=out-shakespeare-char --start="Your tale, sir"
+
+python sample.py --out_dir=out --start=林妹妹暴打王夫人
+
+python train.py --dataset=hongloumeng --n_layer=4 --n_head=4 --n_embd=64 --device=cpu --compile=True --eval_iters=1 --block_size=64 --batch_size=8 --max_iters=2000
+
+python train1.py --dataset=hongloumeng --n_layer=4 --n_head=4 --n_embd=64 --device=‘mps ‘—compile=True --eval_iters=1 --block_size=64 --batch_size=8 --max_iters=2000
+
+python train.py --dataset=shakespeare --n_layer=4 --n_head=4 --n_embd=64 --device='mps' --compile=False --eval_iters=1 --block_size=64 --batch_size=8 --max_iters=2000
+
+python train.py --dataset=shakespeare --device=mps --compile=False --eval_iters=20 --log_interval=1 --block_size=64 --batch_size=12 --n_layer=4 --n_head=4 --n_embd=128 --max_iters=2000 --lr_decay_iters=2000 --dropout=0.0
+
+python train.py --dataset=xiyouji --n_layer=4 --n_head=4 --n_embd=64 --device='mps' --compile=False --eval_iters=1 --block_size=64 --batch_size=8 --max_iters=2000
+
+python train.py --dataset=openwebtext --n_layer=4 --n_head=4 --n_embd=64 --device='mps' --compile=False --eval_iters=1 --block_size=64 --batch_size=8 --max_iters=2000
+
+python sample.py --out_dir=out --start="To be or not to be"
+
+python train.py --dataset=openwebtext --n_layer=4 --n_head=4 --n_embd=64 --device='mps' --compile=False --eval_iters=1 --block_size=64 --batch_size=16 --n_layer=8 --n_head=8 --n_embd=128 --max_iters=3000
+
+python sample.py --out_dir=out --start=‘What is the meaning of life’
